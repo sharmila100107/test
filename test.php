@@ -1,0 +1,41 @@
+
+<html>
+<head>
+    <title>PHP Form Example</title>
+</head>
+<body>
+
+<h2>Contact Form</h2>
+
+<form method="post" action="">
+    Name:
+    <input type="text" name="name" required>
+    <br><br>
+
+    Email:
+    <input type="email" name="email" required>
+    <br><br>
+
+    Message:
+    <textarea name="message" required></textarea>
+    <br><br>
+
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+<?php
+if (isset($_POST['submit'])) {
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    echo "<h3>Form Submitted Successfully</h3>";
+    echo "Name: " . htmlspecialchars($name) . "<br>";
+    echo "Email: " . htmlspecialchars($email) . "<br>";
+    echo "Message: " . htmlspecialchars($message);
+}
+?>
+
+</body>
+</html>
